@@ -3,20 +3,38 @@ const {Component} = substance
 
 class DevKitComponent extends Component {
 
+    /**
+     * Method called when component is disposed and removed from DOM
+     */
     dispose() {
         // Perfect place to remove eventlisteners etc
     }
 
+    /**
+     * Constructor
+     * @param args
+     */
     constructor(...args) {
         super(...args)
     }
 
+
+    /**
+     *
+     * @returns {{clickCount: number}}
+     */
     getInitialState() {
         return {
             clickCount: 0
         }
     }
 
+
+    /**
+     * Render method is called whenever there's a change in state or props
+     * @param $$
+     * @returns {*}
+     */
     render($$) {
         const el = $$('div')
 
@@ -25,13 +43,14 @@ class DevKitComponent extends Component {
 
         let clickCount = this.state.clickCount
 
-        let button = $$('span').on('click', () => {
+        let button = $$('button').on('click', () => {
             this.setState({
                 clickCount: clickCount+1
             })
         }).append('Click me')
 
         el.append(button)
+
         return el
     }
 }
