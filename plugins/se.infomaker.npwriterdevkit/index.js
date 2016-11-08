@@ -1,5 +1,5 @@
 import DevkitPackage from './DevKitPackage'
-const {registerPlugin} = writer
+import {registerPlugin} from 'writer'
 
 export default () => {
     if (registerPlugin) {
