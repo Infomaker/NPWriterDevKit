@@ -30,6 +30,10 @@ module.exports = {
       compress: false,
       port: 3000
     },
+    externals: {
+        writer: 'writer',
+        substance: 'substance'
+    },
     postcss: [
         autoprefixer({
             browsers: ['last 2 versions']
