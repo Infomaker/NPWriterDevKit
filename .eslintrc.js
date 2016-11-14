@@ -28,7 +28,7 @@ module.exports = {
     "no-console": [2, { allow: ["warn", "log", "info", "error", "assert"] }],
     "no-constant-condition": 2,
     "no-control-regex": 2,
-    "no-debugger": 2,
+    "no-debugger": 1,
     "no-dupe-args": 2,
     "no-dupe-keys": 2,
     "no-duplicate-case": 2,
@@ -132,7 +132,7 @@ module.exports = {
     "no-undef": 2,
     "no-undef-init": 2,
     "no-undefined": 0,
-    "no-unused-vars": 2,
+    "no-unused-vars": 1,
     "no-use-before-define": [2, { "functions": false }]
   }
 };

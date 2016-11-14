@@ -34,6 +34,7 @@ module.exports = {
         writer: 'writer',
         substance: 'substance'
     },
+    devtool: 'source-map',
     postcss: [
         autoprefixer({
             browsers: ['last 2 versions']

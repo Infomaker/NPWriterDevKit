@@ -38,7 +38,7 @@ class DevKitComponent extends Component {
     render($$) {
         const el = $$('div')
 
-        el.append($$('h2').append('Devkit plugin loaded'))
+        el.append($$('h2').append(this.getLabel('Devkit plugin loaded')))
         el.append($$('p').append(String(this.state.clickCount)))
 
         let clickCount = this.state.clickCount
