@@ -1,3 +1,5 @@
+import './scss/index.scss'
+
 import DevKitComponent from './DevKitComponent'
 
 export default {

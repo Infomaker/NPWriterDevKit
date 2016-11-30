@@ -1,5 +1,4 @@
-const {Component} = substance
-// const {api} = writer
+import {Component} from 'substance'
 
 class DevKitComponent extends Component {
 
@@ -30,13 +29,14 @@ class DevKitComponent extends Component {
     }
 
 
+
     /**
      * Render method is called whenever there's a change in state or props
      * @param $$
      * @returns {*}
      */
     render($$) {
-        const el = $$('div')
+        const el = $$('div').addClass('devkit')
 
         el.append($$('h2').append(this.getLabel('Devkit plugin loaded')))
         el.append($$('p').append(String(this.state.clickCount)))

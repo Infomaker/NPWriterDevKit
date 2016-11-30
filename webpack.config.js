@@ -48,13 +48,13 @@ module.exports = {
           },
           {
               test: /\.scss$/,
-              loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+              loader: ExtractTextPlugin.extract('style', 'css!sass')
           },
           {
               test: /\.jsx?$/,
               exclude: /(node_modules)/,
               loaders: [
-                  'babel?presets[]=stage-0,presets[]=es2015'
+                  'babel?presets[]=stage-0,presets[]=es2015-node6'
               ]
           }
         ],
