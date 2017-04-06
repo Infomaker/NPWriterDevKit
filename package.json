@@ -4,9 +4,9 @@
   "description": "Development kit for developing plugin for the Newspilot Writer",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base dist/ --config webpack.config.js --hot --progress --colors --watch",
-    "dev:build": "webpack --config webpack.config.js --progress --colors",
-    "build": "webpack --config webpack.production.config.js"
+    "start": "webpack-dev-server --content-base dist/ --config webpack.config.js --hot --progress --colors --watch",
+    "build": "webpack --config webpack.config.js --progress --colors",
+    "prod:build": "webpack --config webpack.production.config.js"
   },
   "repository": {
     "type": "git",

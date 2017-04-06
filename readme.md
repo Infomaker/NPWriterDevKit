@@ -11,10 +11,10 @@ npm install
 
 Start a webpack development server running at localhost:3000
 ```
-npm run dev
+npm start
 ```
 
-_Specify port on dev server_ `PORT=1337 npm run dev`
+_Specify port on dev server_ `PORT=1337 npm start`
 
 ### Add plugin to Newspilot Writer
 In your Newspilot Writer open /server/config/writer.json and add your plugin  
