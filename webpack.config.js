@@ -4,6 +4,16 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const port = process.env.PORT || 3000
 
+class Notifier {
+    apply(compiler) {
+        compiler.plugin("done", (stats) => {
+            setTimeout(() => {
+                console.log(`Plugin served at http://localhost:${port}/index.js`)
+            }, 400)
+        })
+    }
+}
+
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -53,6 +63,7 @@ module.exports = {
         failOnError: false
     },
     plugins: [
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("style.css"),
+        new Notifier()
     ]
 };
