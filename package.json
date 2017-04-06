@@ -1,11 +1,12 @@
 {
   "name": "npwriter-dev-kit",
-  "version": "0.0.1",
-  "description": "Development kit for developing plugin for the Newspilot Writer 2",
+  "version": "1.0.0",
+  "description": "Development kit for developing plugin for the Newspilot Writer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --content-base build/ --config webpack.config.js --hot --progress --colors --watch"
+    "dev": "webpack-dev-server --content-base build/ --config webpack.config.js --hot --progress --colors --watch",
+    "dev:build": "webpack --config webpack.config.js --progress --colors",
+    "build": "webpack --config webpack.production.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,11 @@
   },
   "homepage": "https://github.com/Infomaker/NPWriterDevKit#readme",
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015-node6": "^0.3.0",
     "babel-preset-stage-0": "^6.16.0",
-    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.8.1",
     "eslint-loader": "^1.6.0",
