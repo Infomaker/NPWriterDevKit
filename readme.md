@@ -2,6 +2,13 @@
 
 ### Get started
 
+Clone
+
+```
+git clone git@github.com:Infomaker/NPWriterDevKit.git
+cd NPWriterDevKit
+```
+
 Install dependencies
 
 ```
