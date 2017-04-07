@@ -10,12 +10,13 @@ export default {
 
 
     /*
-     * Optional but recommended properties
-     *
+     * Optional, but recommended properties.
+     * Edit all of these to your liking
      */
-    title: 'Newspilot Writer Devkit',  //EDIT ME
-    description: `A description of this plugin`,  //EDIT ME
-    organization: 'Infomaker Scandinavia AB',  //EDIT ME
+    title: 'Newspilot Writer Devkit',
+    description: `A description of this plugin`,
+    version: '{{version}}', // Don't change, will be changed in build
+    organization: 'Infomaker Scandinavia AB',
     website: 'https://github.com/Infomaker/NPWriterDevKit',
     tags: [],
     authors: [

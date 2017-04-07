@@ -33,6 +33,14 @@ module.exports = {
                 loaders: [
                     'babel?presets[]=stage-0,presets[]=es2015-node6'
                 ]
+            },
+            {
+                test: /\.js$/,
+                loader: 'string-replace',
+                query: {
+                    search: '{{version}}',
+                    replace: process.env.version || 'dev'
+                }
             }
         ],
         preLoaders: [
