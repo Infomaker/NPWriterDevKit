@@ -42,7 +42,6 @@ class DevKitComponent extends Component {
         el.append($$('p').append(String(this.state.clickCount)))
 
         let clickCount = this.state.clickCount
-
         let button = $$('button').on('click', () => {
             this.setState({
                 clickCount: clickCount+1
