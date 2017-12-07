@@ -1,39 +1,39 @@
 {
-  "name": "npwriter-dev-kit",
-  "version": "1.0.0",
-  "description": "Development kit for developing plugin for the Newspilot Writer",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --content-base dist/ --config webpack.config.js --hot --progress --colors --watch",
-    "build": "webpack --config webpack.config.js --progress --colors",
-    "prod:build": "webpack --config webpack.production.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Infomaker/NPWriterDevKit.git"
-  },
-  "author": "Andreas Kihlberg",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Infomaker/NPWriterDevKit/issues"
-  },
-  "homepage": "https://github.com/Infomaker/NPWriterDevKit#readme",
-  "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-loader": "^6.2.5",
-    "babel-preset-es2015-node6": "^0.3.0",
-    "babel-preset-stage-0": "^6.16.0",
-    "css-loader": "^0.25.0",
-    "eslint": "^3.8.1",
-    "eslint-loader": "^1.6.0",
-    "express": "^4.14.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "node-sass": "^3.10.1",
-    "sass-loader": "^4.0.2",
-    "string-replace-loader": "^1.2.0",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
-  }
+    "name": "npwriter-dev-kit",
+    "version": "1.0.0",
+    "description": "Development kit for developing plugin for the Newspilot Writer",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --content-base dist/ --config webpack.config.js --hot --progress --colors --watch",
+        "build": "webpack --config webpack.config.js --progress --colors",
+        "prod:build": "webpack --config webpack.production.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Infomaker/NPWriterDevKit.git"
+    },
+    "author": "Andreas Kihlberg",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Infomaker/NPWriterDevKit/issues"
+    },
+    "homepage": "https://github.com/Infomaker/NPWriterDevKit#readme",
+    "devDependencies": {
+        "babel-cli": "^6.16.0",
+        "babel-core": "^6.17.0",
+        "babel-loader": "^6.2.5",
+        "babel-preset-es2015-node6": "^0.3.0",
+        "babel-preset-stage-0": "^6.16.0",
+        "css-loader": "^0.25.0",
+        "eslint": "^3.8.1",
+        "eslint-loader": "^1.6.0",
+        "express": "^4.14.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "node-sass": "^3.10.1",
+        "sass-loader": "^4.0.2",
+        "string-replace-loader": "^1.2.0",
+        "style-loader": "^0.13.1",
+        "webpack": "^1.13.2",
+        "webpack-dev-server": "^1.16.2"
+    }
 }

@@ -29,7 +29,6 @@ class DevKitComponent extends Component {
     }
 
 
-
     /**
      * Render method is called whenever there's a change in state or props
      * @param $$
@@ -44,7 +43,7 @@ class DevKitComponent extends Component {
         let clickCount = this.state.clickCount
         let button = $$('button').on('click', () => {
             this.setState({
-                clickCount: clickCount+1
+                clickCount: clickCount + 1
             })
         }).append('Click me')
 
@@ -53,4 +52,5 @@ class DevKitComponent extends Component {
         return el
     }
 }
+
 export default DevKitComponent

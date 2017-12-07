@@ -4,7 +4,7 @@ import DevKitComponent from './DevKitComponent'
 export default {
     name: 'npwriterdevkit', //EDIT ME
     id: 'se.infomaker.npwriterdevkit', //EDIT ME
-    configure: function (config) {
+    configure: function(config) {
         config.addComponentToSidebarWithTabId(this.id, 'main', DevKitComponent)
     },
 
@@ -21,9 +21,8 @@ export default {
     tags: [],
     authors: [
         {
-            name: "You name",
-            email: "your@email.com"
+            name: 'You name',
+            email: 'your@email.com'
         }
     ]
-
 }

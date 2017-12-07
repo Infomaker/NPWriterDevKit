@@ -1,14 +1,14 @@
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const port = process.env.PORT || 3000
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: './src/index.js',
     output: {
-        filename: "index.js",
-        path: "dist",
+        filename: 'index.js',
+        path: 'dist',
     },
     devServer: {
         historyApiFallback: true,
@@ -61,6 +61,6 @@ module.exports = {
         failOnError: false
     },
     plugins: [
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin('style.css')
     ]
-};
+}
