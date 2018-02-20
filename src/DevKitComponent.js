@@ -1,13 +1,7 @@
 import {Component} from 'substance'
+import {UIButton} from 'writer'
 
 class DevKitComponent extends Component {
-
-    /**
-     * Method called when component is disposed and removed from DOM
-     */
-    dispose() {
-        // Perfect place to remove eventlisteners etc
-    }
 
     /**
      * Constructor
@@ -19,6 +13,14 @@ class DevKitComponent extends Component {
 
 
     /**
+     * Method called when component is disposed and removed from DOM
+     */
+    dispose() {
+        // Perfect place to remove eventlisteners etc
+    }
+
+    /**
+     * Return the inital component state before rendering
      *
      * @returns {{clickCount: number}}
      */
@@ -28,28 +30,53 @@ class DevKitComponent extends Component {
         }
     }
 
+    /**
+     * Do something after the first render
+     */
+    didMount() {
+        console.log('Devkit plugin rendered')
+    }
 
     /**
      * Render method is called whenever there's a change in state or props
+     *
      * @param $$
      * @returns {*}
      */
     render($$) {
-        const el = $$('div').addClass('devkit')
+        const el = $$('div')
+            .addClass('devkit')
 
-        el.append($$('h2').append(this.getLabel('Devkit plugin loaded')))
-        el.append($$('p').append(String(this.state.clickCount)))
+        const button = $$(UIButton, {
+            label: 'Click me'
+        })
+        .on('click', () => {
+            this.increaseClickCount()
+        })
 
-        let clickCount = this.state.clickCount
-        let button = $$('button').on('click', () => {
-            this.setState({
-                clickCount: clickCount + 1
-            })
-        }).append('Click me')
-
-        el.append(button)
+        el.append([
+            $$('h2').append(
+                this.getLabel('Devkit plugin loaded')
+            ),
+            $$('p').append(
+                `You have clicked ${this.state.clickCount} times`
+            ),
+            button
+        ])
 
         return el
+    }
+
+    /**
+     * Increase click count by updating the state.
+     *
+     * The method extendState() perform a partial update of the state, if
+     * you want to completely replace the state, use setState() instead.
+     */
+    increaseClickCount() {
+        this.extendState({
+            clickCount: this.state.clickCount + 1
+        })
     }
 }
 
