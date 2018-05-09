@@ -48,7 +48,7 @@ class DevKitComponent extends Component {
             .addClass('devkit')
 
         const button = $$(UIButton, {
-            label: 'Click me'
+            label: this.getLabel('Click me')
         })
         .on('click', () => {
             this.increaseClickCount()
@@ -59,7 +59,7 @@ class DevKitComponent extends Component {
                 this.getLabel('Devkit plugin loaded')
             ),
             $$('p').append(
-                `You have clicked ${this.state.clickCount} times`
+                this.getLabel('Number of clicks') + `: ${this.state.clickCount}`
             ),
             button
         ])
@@ -80,4 +80,4 @@ class DevKitComponent extends Component {
     }
 }
 
-export default DevKitComponent
+export {DevKitComponent}
