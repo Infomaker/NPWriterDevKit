@@ -1,6 +1,11 @@
 ## NPWriter Developer kit
 
-### Get started
+### Plugin documentation
+For a more detailed documentation on how to use the DevKit and develop
+plugins for the Infomaker Digital writer see the
+[Writer developer documentation](https://docs.writer.infomaker.io/).
+
+### Get started overview
 
 Clone
 
@@ -22,6 +27,3 @@ npm start
 ```
 
 _Specify port on dev server_ `PORT=1337 npm start`
-
-### Add plugin to Newspilot Writer
-In your Newspilot Writer open /server/config/writer.json and add your plugin  
