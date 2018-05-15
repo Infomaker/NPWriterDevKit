@@ -3,7 +3,7 @@ import {registerPlugin} from 'writer'
 
 (() => {
     // Register the plugin with the Writer when registerPlugin() is available
-    if (registerPlugin) {
+    if(registerPlugin) {
         registerPlugin(DevkitPackage)
     }
     else {

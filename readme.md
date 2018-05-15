@@ -2,7 +2,7 @@
 
 ### Plugin documentation
 For a more detailed documentation on how to use the DevKit and develop
-plugins for the Infomaker Digital writer see the
+plugins for the Infomaker Digital Writer see the
 [Writer developer documentation](https://docs.writer.infomaker.io/).
 
 ### Get started overview

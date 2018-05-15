@@ -11,7 +11,6 @@ class DevKitComponent extends Component {
         super(...args)
     }
 
-
     /**
      * Method called when component is disposed and removed from DOM
      */
@@ -50,9 +49,9 @@ class DevKitComponent extends Component {
         const button = $$(UIButton, {
             label: this.getLabel('Click me')
         })
-        .on('click', () => {
-            this.increaseClickCount()
-        })
+            .on('click', () => {
+                this.increaseClickCount()
+            })
 
         el.append([
             $$('h2').append(
