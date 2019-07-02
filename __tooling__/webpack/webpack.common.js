@@ -49,7 +49,8 @@ module.exports = {
                 loader: 'eslint-loader',
                 options: {
                     failOnWarning: false,
-                    failOnError: false
+                    failOnError: false,
+                    formatter: require('eslint').CLIEngine.getFormatter('stylish')
                 }
             },
             {
