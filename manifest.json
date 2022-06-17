@@ -1,0 +1,20 @@
+{
+	"name": "npwriterdevkit",
+	"id": "se.infomaker.npwriterdevkit",
+	"label": "label",
+	"description": "description",
+	"version": "0.0.1",
+	"organisation": "",
+	"contact": {
+		"email": "",
+		"name": "",
+		"url": ""
+	},
+	"script": "index.js",
+	"style": "style.css",
+	"dependencies": {
+		"writer": "^8.0.0"
+	},
+	"schemaVersion": 1,
+	"schema": "schema.json"
+}

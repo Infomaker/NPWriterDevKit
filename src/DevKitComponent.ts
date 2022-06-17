@@ -1,13 +1,17 @@
-import {Component} from 'substance'
+import {Component, SubstanceCreateElement} from 'substance'
 import {UIButton} from 'writer'
 
 class DevKitComponent extends Component {
+
+    state: {
+        clickCount: number
+    }
 
     /**
      * Constructor
      * @param args
      */
-    constructor(...args) {
+    constructor(...args: ConstructorParameters<typeof Component>) {
         super(...args)
     }
 
@@ -42,7 +46,7 @@ class DevKitComponent extends Component {
      * @param $$
      * @returns {*}
      */
-    render($$) {
+    render($$: SubstanceCreateElement) {
         const el = $$('div')
             .addClass('devkit')
 
