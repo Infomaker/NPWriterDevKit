@@ -12,25 +12,10 @@
         "release:minor": "npm version minor",
         "release:hotfix": "npm version patch"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Infomaker/NPWriterDevKit.git"
-    },
-    "contributors": [
-        {
-            "name": "Danne Lundqvist",
-            "email": "danne.lundqvist@infomaker.se"
-        },
-        {
-            "name": "Oscar Karlsson",
-            "email": "oscar.karlsson@infomaker.se"
-        }
-    ],
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/Infomaker/NPWriterDevKit/issues"
     },
-    "homepage": "https://github.com/Infomaker/NPWriterDevKit#readme",
     "dependencies": {
         "@babel/cli": "^7.12.1",
         "@babel/core": "^7.13.10",
