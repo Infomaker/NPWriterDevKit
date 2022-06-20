@@ -6,7 +6,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = () => {
     const entry = './src/index.ts'
-    // const outputPath = path.join(__dirname, '..', '..', 'dist')
     return merge(
         common(entry),
         {
@@ -25,7 +24,7 @@ module.exports = () => {
                     patterns: [
                         {from: '*.md', to: './'},
                         {from: '*.{png,jpg,jpeg,gif}', to: './', noErrorOnMissing: true},
-                        {from: 'manifest.json', to: './'},
+                        {from: 'manifest.json', to: './', noErrorOnMissing: true},
                         {from: 'schema.json', to: './', noErrorOnMissing: true}
                     ]
                 })
