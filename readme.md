@@ -20,7 +20,7 @@ Install dependencies
 npm install
 ```
 
-### 0. Install mkcert
+### Install mkcert
 
 To enable SSL support locally, this project uses `mkcert` to install a local CA, and generating a certificate used by webpack.
 Follow instructions found here [https://github.com/FiloSottile/mkcert](https://github.com/FiloSottile/mkcert) to install the `mkcert` tool.
