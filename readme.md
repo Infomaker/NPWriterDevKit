@@ -35,6 +35,11 @@ In order to access the plugin using SSL, you need to add this to your local `/et
 127.0.0.1       local.plugins.writer.infomaker.io
 ```
 
+### nvm
+We recommend that you use `nvm` to use a specific node version using this project. It is fine to bump Node version, but don't forget to adjust it in the `.nvmrc` file so everyone on the team always uses the same node version when developing.
+  
+[NVM](https://github.com/nvm-sh/nvm)
+
 
 Start a webpack development server running at https://local.plugins.writer.infomaker.io:3000/
 ```
