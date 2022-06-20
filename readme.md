@@ -1,12 +1,13 @@
-## NPWriter Developer kit
+## Naviga Writer Developer startkit
 
 ### Plugin documentation
+
 For a more detailed documentation on how to use the DevKit and develop
-plugins for the Infomaker Digital Writer see the
+plugins for the Naviga Writer see the
 [Writer developer documentation](https://docs.navigaglobal.com/writer/).
 
-
 ## Prerequisites
+
 ### Install mkcert
 
 To enable SSL support locally, this project uses `mkcert` to install a local CA, and generating a certificate used by webpack.
@@ -28,25 +29,93 @@ We recommend that you use `nvm` to use a specific node version using this projec
 [Link to nvm on Github](https://github.com/nvm-sh/nvm)  
 How to setup shell integration so `nvm` automatically call `nvm use` [shell-integration](https://github.com/nvm-sh/nvm#deeper-shell-integration)
 
-
 ## Get started overview
 
 Clone
 
+```bash
+git clone git@github.com:Infomaker/NPWriterDevKit.git <your-plugin-folder>
+cd <your-plugin-folder>
 ```
-git clone git@github.com:Infomaker/NPWriterDevKit.git
-cd NPWriterDevKit
-```
+
+Update information in `package.json`. To avoid any conflicts with other plugins
+it's important to change the `id` and `name` values in these files.
+
+Set the `version` property to `0.0.0` during development, or a different version. Setting it to `0.0.0` will
+simplify the usage of running `release:*` scripts later on.
+
+Replace the contents of this `readme.md` file with information about your plugin. A simple markdown example can be found in
+`README.example.md`.
 
 Install dependencies
 
-```
+```bash
 npm install
 ```
   
 Start a webpack development server running at https://local.plugins.writer.infomaker.io:3000/
-```
+
+```bash
 npm start
 ```
 
 _Specify port on dev server_ `PORT=1337 npm start`
+
+## Build
+
+Running `npm run build` will transpile the TypeScript files into javascript files which are then bundled using webpack, resulting in 
+a deployable package suited for modern browsers.
+
+This command will also run tests, if any exist. To opt out of using test files, simply remove any test files and modify the build command to
+no longer run tests:
+
+```
+"build": "webpack --config __tooling__/webpack/webpack.prod.js"
+```
+
+Resulting bundle will end up in the `dist/` folder, together with any markdown- and image files in the plugin root folder. 
+
+The important files required for actually using the plugin are:
+
+```
+index.js
+style.css
+```
+
+## Versioning
+
+We recommend using [Semantic Versioning](https://semver.org/) when working with deployment of writer plugins to clearly communicate the potential impact
+an upgrade would have.
+
+Running one of the `release:*` npm scripts will update the `version` property of `package.json`, and `package-lock.json` and create a git tag for that version.
+
+```bash
+    npm run release:major   # 1.0.0 -> 2.0.0
+    npm run release:minor   # 1.0.0 -> 1.1.0
+    npm run release:hotfix  # 1.0.0 -> 1.0.1
+```
+
+**Remember to update the `CHANGELOG.md` file before deploying a new version**
+
+## Deploy
+
+Currently this starterkit does not include any bitbucket pipelines/github actions definitions, since we can't make any real assumptions about 
+the user's current hosting/development environment. However it is recommended to set up a pipeline for easier automated deployments.
+
+For cache-busting, communication, and rollback purposes it's recommended to deploy the plugin to a version-prefixed folder structure.
+
+Since the bundle created are pure static files it's also recommended to use some kind of cdn-like hosting environment, such as AWS CloudFront targeting
+an S3 bucket.
+
+E.g.
+
+```
+plugins.hosting.com/my-plugin/1.0.0/index.js
+plugins.hosting.com/my-plugin/1.0.0/style.css
+
+plugins.hosting.com/my-plugin/1.1.0/index.js
+plugins.hosting.com/my-plugin/1.1.0/style.css
+```
+
+This also has the added benefit of making the `CHANGELOG.md` and `readme.md` available as part of the delivery (though it might be a good idea to include a markdown -> html conversion step to the build
+process, to not serve raw markdown to the customer).
