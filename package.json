@@ -8,10 +8,9 @@
         "build": "npm test && webpack --config __tooling__/webpack/webpack.prod.js",
         "build-dev": "DEV_BUILD=1 webpack --config __tooling__/webpack/webpack.dev.js --progress",
         "test": "jest --colors --no-watchman --passWithNoTests",
-        "release:major": "npm version major --no-git-tag-version",
-        "release:minor": "npm version minor --no-git-tag-version",
-        "release:hotfix": "npm version patch --no-git-tag-version",
-        "postversion": "git add package.json package-lock.json && git commit -m \"Bump version to v$npm_package_version\""
+        "release:major": "npm version major",
+        "release:minor": "npm version minor",
+        "release:hotfix": "npm version patch"
     },
     "repository": {
         "type": "git",
