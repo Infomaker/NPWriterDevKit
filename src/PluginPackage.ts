@@ -1,7 +1,7 @@
 import './scss/index.scss'
 import {MainComponent} from './MainComponent'
 
-type PluginConfiguration = {
+interface PluginConfiguration {
     enabled: true
     id: string
     mandatory: boolean

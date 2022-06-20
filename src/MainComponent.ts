@@ -1,11 +1,13 @@
 import {Component, SubstanceCreateElement} from 'substance'
 import {UIButton} from 'writer'
 
+interface State {
+    clickCount: number
+}
+
 export class MainComponent extends Component {
 
-    state: {
-        clickCount: number
-    }
+    state: State
 
     /**
      * Constructor
@@ -24,10 +26,8 @@ export class MainComponent extends Component {
 
     /**
      * Return the inital component state before rendering
-     *
-     * @returns {{clickCount: number}}
      */
-    getInitialState() {
+    getInitialState(): State {
         return {
             clickCount: 0
         }
@@ -42,9 +42,6 @@ export class MainComponent extends Component {
 
     /**
      * Render method is called whenever there's a change in state or props
-     *
-     * @param $$
-     * @returns {*}
      */
     render($$: SubstanceCreateElement) {
         const el = $$('div')
