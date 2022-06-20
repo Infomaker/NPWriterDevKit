@@ -1,7 +1,7 @@
 import {Component, SubstanceCreateElement} from 'substance'
 import {UIButton} from 'writer'
 
-class DevKitComponent extends Component {
+export class MainComponent extends Component {
 
     state: {
         clickCount: number
@@ -82,5 +82,3 @@ class DevKitComponent extends Component {
         })
     }
 }
-
-export {DevKitComponent}

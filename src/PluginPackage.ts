@@ -1,5 +1,5 @@
 import './scss/index.scss'
-import {DevKitComponent} from './DevKitComponent'
+import {MainComponent} from './MainComponent'
 
 type PluginConfiguration = {
     enabled: true
@@ -14,7 +14,7 @@ type PluginConfiguration = {
     }
 }
 
-export default {
+export const PluginPackage = {
     name: 'npwriterdevkit', // TODO: Change "npwriterdevkit" to your plugin name
     id: 'se.infomaker.npwriterdevkit', // TODO: Change this id to you id
 
@@ -23,7 +23,7 @@ export default {
     configure: function(config: DWConfigurator, pluginConfig: PluginConfiguration) {
 
         // Add plugin to main sidebar (can be overriden in plugin config)
-        config.addToSidebar('main', pluginConfig, DevKitComponent)
+        config.addToSidebar('main', pluginConfig, MainComponent)
 
         // Add translations for the plugin
         config.addLabel('Devkit plugin loaded', {
