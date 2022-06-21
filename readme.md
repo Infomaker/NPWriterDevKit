@@ -27,18 +27,27 @@ In order to access the plugin using SSL, you need to add this to your local `/et
 We recommend that you use `nvm` to use a specific node version using this project. It is fine to bump Node version, but don't forget to adjust it in the `.nvmrc` file so everyone on the team always uses the same node version when developing.
   
 [Link to nvm on Github](https://github.com/nvm-sh/nvm)  
-How to setup shell integration so `nvm` automatically call `nvm use` [shell-integration](https://github.com/nvm-sh/nvm#deeper-shell-integration)
+How to setup shell integration so `nvm` automatically calls `nvm use` [shell-integration](https://github.com/nvm-sh/nvm#deeper-shell-integration)
 
 ## Get started overview
 
-Clone
+### 1. Make sure you have followed the steps in prerequisites
+  
+### 2. Clone
 
 ```bash
 git clone git@github.com:Infomaker/NPWriterDevKit.git <your-plugin-folder>
 cd <your-plugin-folder>
 ```
 
-Update information in `package.json`. To avoid any conflicts with other plugins
+### 3. Remove git folder and create a new
+```bash
+rm -rf .git
+git init
+```
+
+### 4. Update local files  
+Update information in `package.json` and `Pluginpackage.ts`. To avoid any conflicts with other plugins
 it's important to change the `id` and `name` values in these files.
 
 Set the `version` property to `0.0.0` during development, or a different version. Setting it to `0.0.0` will
@@ -47,17 +56,20 @@ simplify the usage of running `release:*` scripts later on.
 Replace the contents of this `readme.md` file with information about your plugin. A simple markdown example can be found in
 `README.example.md`.
 
-Install dependencies
-
+### 5. Install dependencies
+Make sure you use the correct node version (`nvm use 16`)
+  
 ```bash
 npm install
 ```
-  
-Start a webpack development server running at https://local.plugins.writer.infomaker.io:3000/
-
+    
+### 6. Start the project
 ```bash
 npm start
 ```
+
+A webpack development server running at https://local.plugins.writer.infomaker.io:3000/  
+Verify that the server runs by copying this url and paste in your browser. https://local.plugins.writer.infomaker.io:3000/index.js
 
 _Specify port on dev server_ `PORT=1337 npm start`
 
