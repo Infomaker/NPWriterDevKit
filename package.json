@@ -1,56 +1,52 @@
 {
     "name": "npwriter-dev-kit",
-    "version": "1.4.1",
-    "description": "Development kit for developing plugin for the Newspilot Writer",
+    "version": "1.5.0",
+    "description": "Development kit for developing plugins for the Writer",
     "main": "src/index.js",
     "scripts": {
-        "start": "webpack-dev-server --config __tooling__/webpack/webpack.dev.js --hot --progress --watch",
-        "build": "webpack --config __tooling__/webpack/webpack.prod.js --progress",
-        "release:major": "npm version major --no-git-tag-version",
-        "release:minor": "npm version minor --no-git-tag-version",
-        "release:hotfix": "npm version patch --no-git-tag-version",
-        "postversion": "git add package.json package-lock.json && git commit -m \"Bump version to v$npm_package_version\""
+        "start": "webpack serve --config __tooling__/webpack/webpack.dev.js --progress",
+        "build": "npm test && webpack --config __tooling__/webpack/webpack.prod.js",
+        "build-dev": "DEV_BUILD=1 webpack --config __tooling__/webpack/webpack.dev.js --progress",
+        "test": "jest --colors --no-watchman --passWithNoTests",
+        "release:major": "npm version major",
+        "release:minor": "npm version minor",
+        "release:hotfix": "npm version patch"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Infomaker/NPWriterDevKit.git"
-    },
-    "contributors": [
-        {
-            "name": "Danne Lundqvist",
-            "email": "danne.lundqvist@infomaker.se"
-        },
-        {
-            "name": "Oscar Karlsson",
-            "email": "oscar.karlsson@infomaker.se"
-        }
-    ],
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/Infomaker/NPWriterDevKit/issues"
     },
-    "homepage": "https://github.com/Infomaker/NPWriterDevKit#readme",
+    "dependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.13.10",
+        "@babel/preset-typescript": "^7.13.0",
+        "@infomaker/types-substance": "^1.3.0",
+        "@infomaker/types-writer": "^8.0.0-beta.4",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "babel-loader": "^8.1.0",
+        "copy-webpack-plugin": "^8.0.0",
+        "css-loader": "^6.5.1",
+        "css-minimizer-webpack-plugin": "^3.4.1",
+        "detect-port": "^1.3.0",
+        "eslint": "^7.8.1",
+        "eslint-webpack-plugin": "^2.5.2",
+        "inquirer": "^7.3.0",
+        "lodash.template": "^4.5.0",
+        "mini-css-extract-plugin": "^2.5.3",
+        "sass": "^1.49.0",
+        "sass-loader": "^11.0.1",
+        "style-loader": "^2.0.0",
+        "terser-webpack-plugin": "^5.1.1",
+        "typescript": "^4.2.3",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.9.2",
+        "webpack-merge": "^5.7.3"
+    },
     "devDependencies": {
-        "@babel/cli": "^7.8.4",
-        "@babel/core": "^7.9.0",
-        "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-        "@babel/plugin-transform-async-to-generator": "^7.4.4",
-        "@babel/preset-env": "^7.4.5",
-        "babel-loader": "^8.0.6",
-        "css-loader": "^3.0.0",
-        "eslint": "^6.0.1",
-        "eslint-loader": "^2.1.2",
-        "express": "^4.17.1",
-        "mini-css-extract-plugin": "^0.7.0",
-        "node-sass": "^4.13.1",
-        "optimize-css-assets-webpack-plugin": "^5.0.1",
-        "sass-loader": "^7.1.0",
-        "string-replace-loader": "^2.2.0",
-        "style-loader": "^0.23.1",
-        "terser-webpack-plugin": "^1.3.0",
-        "webpack": "^4.42.0",
-        "webpack-cli": "^3.3.5",
-        "webpack-dev-server": "^3.10.3",
-        "webpack-merge": "^4.2.1"
+        "@types/jest": "^26.0.10",
+        "jest": "^26.4.2"
     }
 }

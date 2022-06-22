@@ -1,13 +1,19 @@
-import {Component} from 'substance'
+import {Component, SubstanceCreateElement} from 'substance'
 import {UIButton} from 'writer'
 
-class DevKitComponent extends Component {
+interface State {
+    clickCount: number
+}
+
+export class MainComponent extends Component {
+
+    state: State
 
     /**
      * Constructor
      * @param args
      */
-    constructor(...args) {
+    constructor(...args: ConstructorParameters<typeof Component>) {
         super(...args)
     }
 
@@ -20,10 +26,8 @@ class DevKitComponent extends Component {
 
     /**
      * Return the inital component state before rendering
-     *
-     * @returns {{clickCount: number}}
      */
-    getInitialState() {
+    getInitialState(): State {
         return {
             clickCount: 0
         }
@@ -38,11 +42,8 @@ class DevKitComponent extends Component {
 
     /**
      * Render method is called whenever there's a change in state or props
-     *
-     * @param $$
-     * @returns {*}
      */
-    render($$) {
+    render($$: SubstanceCreateElement) {
         const el = $$('div')
             .addClass('devkit')
 
@@ -78,5 +79,3 @@ class DevKitComponent extends Component {
         })
     }
 }
-
-export {DevKitComponent}

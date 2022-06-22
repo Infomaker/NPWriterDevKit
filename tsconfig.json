@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"baseUrl": ".",
+		"lib": [
+			"ES2020",
+			"dom",
+			"esnext"
+		],
+		"target": "ES5",
+		"skipLibCheck": true,
+		"allowJs": true,
+		"noImplicitAny": true,
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"paths": {
+			"*": [
+				"*",
+				"node_modules/@infomaker/types-*"
+			]
+		}
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"/dist/**/*"
+	]
+}
